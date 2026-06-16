@@ -1,0 +1,60 @@
+{
+  "login": {
+    "title": "Quiz Game",
+    "subtitle": "Test your knowledge!",
+    "placeholder": "Enter your name",
+    "button": "Start",
+    "error": "Name cannot be empty"
+  },
+  "setup": {
+    "title": "Quiz Setup",
+    "welcome": "Hello, {{name}}!",
+    "totalQuestions": "Total Questions",
+    "category": "Category",
+    "difficulty": "Difficulty",
+    "timer": "Timer",
+    "start": "Start Quiz!",
+    "resume": "Resume Quiz",
+    "allCategories": "All Categories",
+    "selectCategory": "Select a category"
+  },
+  "quiz": {
+    "question": "Question",
+    "of": "of",
+    "timeLeft": "Time Left"
+  },
+  "result": {
+    "title": "Quiz Result",
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "skipped": "Skipped",
+    "score": "Score",
+    "playAgain": "Play Again",
+    "changePlayer": "Change Player",
+    "perfect": "Perfect!",
+    "great": "Great!",
+    "goodTry": "Good Try!",
+    "keepPracticing": "Keep Practicing!"
+  },
+  "common": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "mixed": "Mixed",
+    "minutes": "minutes",
+    "retry": "Retry"
+  },
+  "categories": {
+    "9": "General Knowledge",
+    "10": "Entertainment: Books",
+    "11": "Entertainment: Film",
+    "12": "Entertainment: Music",
+    "17": "Science and Nature",
+    "18": "Science: Computers",
+    "21": "Sports",
+    "22": "Geography",
+    "23": "History",
+    "24": "Politics",
+    "27": "Animals"
+  }
+}

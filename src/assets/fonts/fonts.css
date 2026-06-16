@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'KanopiBrazil';
+  src: url('./KanopiBrazil-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BlueHighway';
+  src: url('./BlueHighwayRg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

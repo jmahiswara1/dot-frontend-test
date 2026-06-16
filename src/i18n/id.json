@@ -1,0 +1,60 @@
+{
+  "login": {
+    "title": "Quiz Game",
+    "subtitle": "Uji pengetahuanmu!",
+    "placeholder": "Masukkan nama kamu",
+    "button": "Mulai",
+    "error": "Nama tidak boleh kosong"
+  },
+  "setup": {
+    "title": "Atur Kuis",
+    "welcome": "Halo, {{name}}!",
+    "totalQuestions": "Jumlah Soal",
+    "category": "Kategori",
+    "difficulty": "Tingkat Kesulitan",
+    "timer": "Waktu",
+    "start": "Mulai Kuis!",
+    "resume": "Lanjutkan Kuis",
+    "allCategories": "Semua Kategori",
+    "selectCategory": "Pilih kategori"
+  },
+  "quiz": {
+    "question": "Soal",
+    "of": "dari",
+    "timeLeft": "Sisa Waktu"
+  },
+  "result": {
+    "title": "Hasil Kuis",
+    "correct": "Benar",
+    "wrong": "Salah",
+    "skipped": "Tidak Dijawab",
+    "score": "Skor",
+    "playAgain": "Main Lagi",
+    "changePlayer": "Ganti Pemain",
+    "perfect": "Sempurna!",
+    "great": "Hebat!",
+    "goodTry": "Cukup Baik!",
+    "keepPracticing": "Terus Berlatih!"
+  },
+  "common": {
+    "easy": "Mudah",
+    "medium": "Sedang",
+    "hard": "Sulit",
+    "mixed": "Campuran",
+    "minutes": "menit",
+    "retry": "Coba Lagi"
+  },
+  "categories": {
+    "9": "Pengetahuan Umum",
+    "10": "Hiburan: Buku",
+    "11": "Hiburan: Film",
+    "12": "Hiburan: Musik",
+    "17": "Sains dan Alam",
+    "18": "Sains: Komputer",
+    "21": "Olahraga",
+    "22": "Geografi",
+    "23": "Sejarah",
+    "24": "Politik",
+    "27": "Hewan"
+  }
+}
