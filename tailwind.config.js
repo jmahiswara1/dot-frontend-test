@@ -14,8 +14,8 @@ export default {
         warning: '#F59E0B',
       },
       fontFamily: {
-        display: ['KanopiBrazil', 'sans-serif'],
-        body: ['BlueHighway', 'sans-serif'],
+        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 2px 4px rgba(0, 0, 0, 0.05)',
