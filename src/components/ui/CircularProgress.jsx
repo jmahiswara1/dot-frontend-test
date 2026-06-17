@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function CircularProgress({ percentage, size = 200, strokeWidth = 12 }) {
+export default function CircularProgress({ percentage, size = 200, strokeWidth = 12, className = '' }) {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const strokeDasharray = circumference;
@@ -15,8 +15,8 @@ export default function CircularProgress({ percentage, size = 200, strokeWidth =
   };
 
   return (
-    <div className="relative inline-flex items-center justify-center">
-      <svg width={size} height={size} className="-rotate-90">
+    <div className={`relative inline-flex items-center justify-center w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] ${className}`}>
+      <svg viewBox={`0 0 ${size} ${size}`} className="w-full h-full -rotate-90">
         {/* Background circle */}
         <circle
           cx={size / 2}
@@ -49,10 +49,10 @@ export default function CircularProgress({ percentage, size = 200, strokeWidth =
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-center"
         >
-          <div className="font-display font-bold text-5xl text-gray-800">
+          <div className="font-display font-bold text-3xl sm:text-5xl text-gray-800">
             {percentage}%
           </div>
-          <div className="font-body text-sm text-gray-500 mt-1">
+          <div className="font-body text-xs sm:text-sm text-gray-500 mt-1">
             Score
           </div>
         </motion.div>

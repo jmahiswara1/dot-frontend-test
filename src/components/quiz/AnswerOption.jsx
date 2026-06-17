@@ -31,8 +31,8 @@ export default function AnswerOption({
       onClick={onClick}
       disabled={disabled}
       className={`
-        w-full p-4 rounded-lg text-left
-        font-body font-medium
+        w-full p-3 sm:p-4 rounded-lg text-left
+        font-body font-medium break-words
         transition-all duration-200
         disabled:cursor-not-allowed
         ${getStyles()}

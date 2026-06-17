@@ -81,46 +81,46 @@ export default function ResultPage() {
         </div>
       )}
 
-      <div className="max-w-3xl mx-auto pt-12">
+      <div className="max-w-3xl mx-auto pt-6 sm:pt-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <Card gradient>
-            <div className="text-center mb-8">
-              <h1 className="font-display text-4xl font-bold text-gray-800 mb-4">
+            <div className="text-center mb-6 sm:mb-8">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
                 {t('result.title')}
               </h1>
-              <p className="font-body text-2xl font-semibold text-primary mb-6">
+              <p className="font-body text-xl sm:text-2xl font-semibold text-primary mb-4 sm:mb-6">
                 {getGrade()}
               </p>
 
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center mb-6 sm:mb-8">
                 <CircularProgress percentage={percentage} />
               </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="p-4 bg-green-50 rounded-lg">
-                  <CheckCircle className="w-8 h-8 text-success mx-auto mb-2" />
-                  <p className="font-body text-sm text-gray-600 mb-1">{t('result.correct')}</p>
-                  <p className="font-display text-3xl font-bold text-success">{correctAnswers}</p>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
+                <div className="p-3 sm:p-4 bg-green-50 rounded-lg">
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-success mx-auto mb-1 sm:mb-2" />
+                  <p className="font-body text-xs sm:text-sm text-gray-600 mb-1">{t('result.correct')}</p>
+                  <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-success">{correctAnswers}</p>
                 </div>
-                <div className="p-4 bg-red-50 rounded-lg">
-                  <XCircle className="w-8 h-8 text-error mx-auto mb-2" />
-                  <p className="font-body text-sm text-gray-600 mb-1">{t('result.wrong')}</p>
-                  <p className="font-display text-3xl font-bold text-error">{wrongAnswers}</p>
+                <div className="p-3 sm:p-4 bg-red-50 rounded-lg">
+                  <XCircle className="w-6 h-6 sm:w-8 sm:h-8 text-error mx-auto mb-1 sm:mb-2" />
+                  <p className="font-body text-xs sm:text-sm text-gray-600 mb-1">{t('result.wrong')}</p>
+                  <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-error">{wrongAnswers}</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <SkipForward className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                  <p className="font-body text-sm text-gray-600 mb-1">{t('result.skipped')}</p>
-                  <p className="font-display text-3xl font-bold text-gray-500">{skippedAnswers}</p>
+                <div className="p-3 sm:p-4 bg-gray-50 rounded-lg">
+                  <SkipForward className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-1 sm:mb-2" />
+                  <p className="font-body text-xs sm:text-sm text-gray-600 mb-1">{t('result.skipped')}</p>
+                  <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-gray-500">{skippedAnswers}</p>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="font-display text-xl font-bold text-gray-800 mb-4">Review</h3>
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="font-display text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Review</h3>
               {questions.map((q, index) => {
                 const userAnswer = answers[index];
                 const isCorrect = userAnswer === q.correct_answer;
@@ -130,7 +130,7 @@ export default function ResultPage() {
                   <div
                     key={index}
                     className={`
-                      p-4 rounded-lg border-2
+                      p-3 sm:p-4 rounded-lg border-2
                       ${wasSkipped
                         ? 'border-gray-300 bg-gray-50'
                         : isCorrect
@@ -139,16 +139,16 @@ export default function ResultPage() {
                       }
                     `}
                   >
-                    <p className="font-body font-medium text-gray-800 mb-2">
+                    <p className="font-body font-medium text-gray-800 mb-2 break-words">
                       {index + 1}. {q.question}
                     </p>
                     {!wasSkipped && (
-                      <p className={`font-body text-sm mb-1 ${isCorrect ? 'text-success' : 'text-error'}`}>
+                      <p className={`font-body text-sm mb-1 break-words ${isCorrect ? 'text-success' : 'text-error'}`}>
                         Your answer: {userAnswer}
                       </p>
                     )}
                     {!isCorrect && (
-                      <p className="font-body text-sm text-success">
+                      <p className="font-body text-sm text-success break-words">
                         Correct: {q.correct_answer}
                       </p>
                     )}
@@ -157,7 +157,7 @@ export default function ResultPage() {
               })}
             </div>
 
-            <div className="flex gap-3 mt-8">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6 sm:mt-8">
               <Button onClick={handlePlayAgain} variant="primary" size="lg" className="flex-1">
                 {t('result.playAgain')}
               </Button>

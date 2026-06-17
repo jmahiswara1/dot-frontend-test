@@ -66,25 +66,39 @@ export default function QuizPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white p-4">
+    <div className="min-h-screen bg-white">
 
-      {/* Timer top-left */}
-      <div className="fixed top-4 left-4 z-20 w-48">
-        <TimerBar
-          timeLeft={timeRemaining}
-          totalTime={config.timerDuration}
-        />
-      </div>
-
-      {/* Progress bar full width */}
-      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-20 w-full max-w-3xl px-4">
+      {/* Mobile: inline stacked header */}
+      <div className="sm:hidden sticky top-0 z-20 bg-white border-b border-gray-100 p-3 space-y-2">
+        <div className="flex items-center justify-between">
+          <TimerBar
+            timeLeft={timeRemaining}
+            totalTime={config.timerDuration}
+          />
+        </div>
         <ProgressBar
           current={currentIndex + 1}
           total={questions.length}
         />
       </div>
 
-      <div className="max-w-3xl mx-auto pt-24 relative z-10">
+      {/* Desktop: fixed timer left + progress center */}
+      <div className="hidden sm:block">
+        <div className="fixed top-4 left-4 z-20 w-48">
+          <TimerBar
+            timeLeft={timeRemaining}
+            totalTime={config.timerDuration}
+          />
+        </div>
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-20 w-full max-w-3xl px-4">
+          <ProgressBar
+            current={currentIndex + 1}
+            total={questions.length}
+          />
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto p-4 pb-8 pt-4 sm:pt-24 relative z-10">
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -95,16 +109,16 @@ export default function QuizPage() {
             transition={{ duration: 0.3 }}
           >
             <Card gradient>
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <p className="font-body text-sm text-gray-500 mb-2">
                   {t('quiz.question')} {currentIndex + 1} {t('quiz.of')} {questions.length}
                 </p>
-                <h2 className="font-display text-2xl font-bold text-gray-800">
+                <h2 className="font-display text-lg sm:text-2xl font-bold text-gray-800">
                   {currentQuestion.question}
                 </h2>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {currentQuestion.allAnswers.map((answer, index) => (
                   <AnswerOption
                     key={index}

@@ -15,8 +15,8 @@ export default function LanguageSwitcher({ className = '' }) {
     <button
       onClick={toggleLanguage}
       className={`
-        relative inline-flex items-center gap-2
-        px-4 py-2 rounded-full
+        relative inline-flex items-center gap-1.5 sm:gap-2
+        px-3 py-1.5 sm:px-4 sm:py-2 rounded-full
         bg-white border border-gray-200
         shadow-soft hover:shadow-card
         transition-all duration-300
@@ -24,10 +24,10 @@ export default function LanguageSwitcher({ className = '' }) {
         ${className}
       `}
     >
-      <span className="text-lg">
+      <span className="text-base sm:text-lg">
         {language === 'id' ? '🇮🇩' : '🇬🇧'}
       </span>
-      <span className="font-body font-semibold text-sm text-gray-700">
+      <span className="font-body font-semibold text-xs sm:text-sm text-gray-700">
         {language.toUpperCase()}
       </span>
     </button>

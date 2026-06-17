@@ -73,7 +73,7 @@ export default function SetupPage() {
 
       <div className="max-w-lg w-full relative z-10">
         <Card gradient className="!p-4">
-          <h1 className="font-display text-2xl font-bold text-gray-800 mb-1">
+          <h1 className="font-display text-xl sm:text-2xl font-bold text-gray-800 mb-1">
             {t('setup.title')}
           </h1>
           <p className="font-body text-sm text-gray-600 mb-4">

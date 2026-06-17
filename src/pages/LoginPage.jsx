@@ -46,7 +46,7 @@ export default function LoginPage() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <h1 className="font-display text-4xl font-bold text-gray-800 mb-2">
+              <h1 className="font-display text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
                 {t('login.title')}
               </h1>
               <p className="font-body text-gray-600">{t('login.subtitle')}</p>
