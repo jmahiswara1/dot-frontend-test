@@ -1,22 +1,43 @@
 import { create } from 'zustand';
 import { storage } from '../utils/storage';
 
+const defaultConfig = {
+  totalQuestions: 10,
+  category: null,
+  difficulty: 'medium',
+  timerDuration: 300
+};
+
+const sessionFromStorage = storage.getSession();
+
+const initialState = sessionFromStorage
+  ? {
+      config: sessionFromStorage.config || defaultConfig,
+      questions: sessionFromStorage.questions || [],
+      currentIndex: sessionFromStorage.currentIndex || 0,
+      answers: sessionFromStorage.answers || {},
+      correctAnswers: sessionFromStorage.correctAnswers || 0,
+      wrongAnswers: sessionFromStorage.wrongAnswers || 0,
+      skippedAnswers: sessionFromStorage.skippedAnswers || 0,
+      status: sessionFromStorage.status || 'playing',
+      timeRemaining: sessionFromStorage.timeRemaining || 0,
+      startedAt: sessionFromStorage.startedAt || null
+    }
+  : {
+      config: defaultConfig,
+      questions: [],
+      currentIndex: 0,
+      answers: {},
+      correctAnswers: 0,
+      wrongAnswers: 0,
+      skippedAnswers: 0,
+      status: 'idle',
+      timeRemaining: 0,
+      startedAt: null
+    };
+
 export const useQuizStore = create((set, get) => ({
-  config: {
-    totalQuestions: 10,
-    category: null,
-    difficulty: 'medium',
-    timerDuration: 300
-  },
-  questions: [],
-  currentIndex: 0,
-  answers: {},
-  correctAnswers: 0,
-  wrongAnswers: 0,
-  skippedAnswers: 0,
-  status: 'idle',
-  timeRemaining: 0,
-  startedAt: null,
+  ...initialState,
 
   setConfig: (config) => {
     set({ config: { ...get().config, ...config } });
@@ -140,12 +161,7 @@ export const useQuizStore = create((set, get) => ({
   clearStorage: () => {
     storage.clearSession();
     set({
-      config: {
-        totalQuestions: 10,
-        category: null,
-        difficulty: 'medium',
-        timerDuration: 300
-      },
+      config: defaultConfig,
       questions: [],
       currentIndex: 0,
       answers: {},

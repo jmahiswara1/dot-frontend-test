@@ -114,8 +114,8 @@ export default function SetupPage() {
                 {t('setup.category')}
               </label>
               <CustomDropdown
-                value={config.category || ''}
-                onChange={(value) => setConfig({ category: value ? parseInt(value) : null })}
+                value={config.category != null ? String(config.category) : ''}
+                onChange={(value) => setConfig({ category: value ? parseInt(value, 10) : null })}
                 options={[
                   { value: '', label: t('setup.allCategories') },
                   ...CATEGORIES.map(id => ({ value: String(id), label: t(`categories.${id}`) }))

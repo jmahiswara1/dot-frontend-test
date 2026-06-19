@@ -1,10 +1,12 @@
 import { create } from 'zustand';
 import { storage } from '../utils/storage';
 
+const initialAuth = storage.getAuth();
+
 export const useAuthStore = create((set) => ({
-  username: null,
-  language: 'id',
-  isLoggedIn: false,
+  username: initialAuth?.username || null,
+  language: initialAuth?.language || 'id',
+  isLoggedIn: !!initialAuth,
 
   loadFromStorage: () => {
     const auth = storage.getAuth();

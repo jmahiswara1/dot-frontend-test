@@ -27,12 +27,12 @@ export default function QuizPage() {
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    if (status !== 'playing') {
+    if (status === 'finished') {
       navigate('/result');
       return;
     }
 
-    if (questions.length === 0) {
+    if (status !== 'playing' || questions.length === 0) {
       navigate('/setup');
       return;
     }
